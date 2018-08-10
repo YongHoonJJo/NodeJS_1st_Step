@@ -1,13 +1,10 @@
 /* public/css/master.css */
 
-h1 {
-    color: tomato
+.contact h2 {
+    color: tomato;
 }
 
-.stranger {
-    color: orange
-}
-
-.name {
-    color: cornflowerblue
+.contact .contact-form label {
+    display: inline-block;
+    width: 50px;
 }
