@@ -1,0 +1,38 @@
+<!-- views/contacts/edit.ejs -->
+
+<!-- edit.ejs는 new.ejs와 거의 같지만 값들이 form에 들어 있고, form action이 update action을 실행하게 한다는 점만 다릅니다. -->
+<!-- put 역시 form에서 사용할 수 없으므로 _method=put을 사용하였습니다. -->
+
+<!DOCTYPE html>
+<html>
+ <head>
+  <% include ../partials/head %>
+ </head>
+ <body>
+  <% include ../partials/nav %>
+
+  <div class="contact contact-edit">
+   <div class="contact-menu">
+    <a href="/contacts/<%= contact._id %>">Back</a>
+   </div>
+   <h2>Edit</h2>
+   <form class="contact-form" action="/contacts/<%= contact._id %>?_method=put" method="post">
+    <div>
+     <label for="name">Name</label>
+     <input type="text" id="name" name="name" value="<%= contact.name %>">
+    </div>
+    <div>
+     <label for="email">Email</label>
+     <input type="text" id="email" name="email" value="<%= contact.email %>">
+    </div>
+    <div>
+     <label for="phone">Phone</label>
+     <input type="text" id="phone" name="phone" value="<%= contact.phone %>">
+    </div>
+    <div>
+     <button type="submit">Submit</button>
+    </div>
+   </div>
+  </form>
+ </body>
+</html>
